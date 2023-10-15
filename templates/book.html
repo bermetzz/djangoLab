@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book</title>
-</head>
-<body>
-<h1>Available books in library</h1>
-<ul>
-    {% for i in book_key %}
-    <li>
-        <h3>{{i.title}}</h3>
-        <p><i>{{i.description}}</i></p>
-        <img src="{{i.image.url}}" alt="book" width="400px">
-        <p><b>{{i.created_date}}</b></p>
-    </li>
-    {% endfor %}}
-</ul>
-</body>
-</html>
+{% include 'header.html' %}
+<h1 class="text-center mb-5 display-4">Available Books in Library</h1>
+<hr>
+{% for i in book_key %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col align-self-start">
+            <h4><i>{{i.title}}</i></h4>
+            <p>{{i.created_date}}</p>
+            <button type="button" class="btn btn-outline-secondary"><a href="/book_detail/{{i.id}}/">More</a></button>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% include 'footer.html' %}
