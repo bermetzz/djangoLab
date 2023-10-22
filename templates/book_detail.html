@@ -20,5 +20,23 @@
         <img src="{{book_key.image.url}}" alt="book" width="300px">
     </div>
 </div>
+
+<table class="table table-dark container">
+    <thead>
+    <tr class="text-center">
+        <th>date</th>
+        <th>review text</th>
+        <th>rate</th>
+    </tr>
+    </thead>
+    {% for i in book_key.review_object.all%}
+    <tr>
+        <td>{{i.created_at}}</td>
+        <td>{{i.text_review}}</td>
+        <td>{{i.rate_stars}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 </body>
 </html>
