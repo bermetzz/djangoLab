@@ -7,17 +7,19 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body style="background-color: #548877">
+<button type="button" class="btn btn-outline-warning m-2"><a href="/book_list/{{object.id}}/update/">Edit</a></button>
+<button type="button" class="btn btn-outline-danger"><a href="/book_list/{{object.id}}/delete/">Delete</a></button>
 <h1 class="text-center m-3 display-6">Detailed Info</h1>
 <div style="display:flex" class="m-4">
     <div>
-        <h3>{{book_key.title}}</h3>
-        <p>{{book_key.description}}</p>
-        <p>Book genre: {{book_key.genre}}</p>
-        <iframe src="{{book_key.url}}" frameborder="0" allowfullscreen></iframe>
+        <h3>{{object.title}}</h3>
+        <p>{{object.description}}</p>
+        <p>Book genre: {{object.genre}}</p>
+        <iframe src="{{object.url}}" frameborder="0" allowfullscreen></iframe>
         <p>{{book_key.created_date}}</p>
     </div>
     <div class="ms-2">
-        <img src="{{book_key.image.url}}" alt="book" width="300px">
+        <img src="{{object.image.url}}" alt="book" width="300px">
     </div>
 </div>
 
@@ -29,7 +31,7 @@
         <th>rate</th>
     </tr>
     </thead>
-    {% for i in book_key.review_object.all%}
+    {% for i in object.review_object.all%}
     <tr>
         <td>{{i.created_at}}</td>
         <td>{{i.text_review}}</td>
