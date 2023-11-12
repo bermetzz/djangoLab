@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<h1>{{object.name}}</h1>
+<p>{{object.cost}}</p>
+<p>{{object.created_at}}</p>
+<ul>
+    {% for i in object.tag.all %}
+        <li>
+            <h3>#{{ i.name }}</h3>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
