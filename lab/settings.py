@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'book',
     'custom_users',
     'hashtags',
-    'cloth'
+    'cloth',
 ]
 
 MIDDLEWARE = [
@@ -65,8 +65,12 @@ WSGI_APPLICATION = 'lab.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cloth',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
